@@ -1,0 +1,211 @@
+body {
+    background-color: #F8C25C;
+}
+
+@font-face {
+	font-family: 'Reforma Grotesk Bold';
+    src: url('fonts/Reforma_Grotesk_Bold.otf');
+   }
+
+h1 {
+    color: #242121;
+    font-family: 'Montserrat Bold';
+    font-size: 360%;
+    margin: 120px auto auto;
+}
+
+@font-face {
+	font-family: 'Montserrat Bold';
+    src: url('fonts/Montserrat-Bold.ttf');
+   }
+
+h2 {
+    color: #242121;
+    font-family: 'Montserrat Bold';
+    margin: 50px auto auto;
+}
+
+footer {
+    background-color: #242121;
+    bottom: 0;
+    color: #F8C25C;
+    font-family: 'Montserrat Bold';
+    left: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.bottomTitle {
+    font-size: 80%;
+    margin-left: 10px;
+}
+
+.footerLink {
+    color: #FF2047;
+    float: right;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.footerLink:hover {
+    color: #F8F3E3;
+}
+
+.pagesTitle {
+    font-size: 200%;
+}
+
+.book {
+    color: #FF2047;
+}
+
+.home {
+    font-family: 'Reforma Grotesk Bold';
+    font-size: 300%;
+    color: #242121;
+    text-decoration: none;
+}
+
+.homeRed {
+    color: #FF2047;
+}
+
+.menu {
+    align-items: center;
+    display: flex;
+	justify-content: space-between;
+	height: 45px;
+    position: sticky;
+	top: 0;
+}
+
+.menuItem {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.menuLink {
+    color: #242121;
+    font-family: 'Montserrat Bold';
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    transition: color .25s ease-out;
+    will-change: color;
+}
+
+.menuLink::before,
+.menuLink::after {
+    background-color: #FF2047;
+    bottom: 0;
+    content: "";
+    height: 3px;
+    position: absolute;
+    transition: width .1s ease-out;
+    width: 0;
+    will-change: width;
+}
+
+.menuLink::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menuLink::after {
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.menuLink:hover::before,
+.menuLink:hover::after {
+    transition-duration: .2s;
+    width: 100%;
+}
+
+.chooseRecType {
+    margin-bottom: 50px;
+    margin-left: 580px;
+    margin-top: 50px;
+}
+
+.container {
+    color: #242121;
+    cursor: pointer;
+    display: block;
+    font-family: 'Montserrat Bold';
+    margin-bottom: 12px;
+    padding-left: 35px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.container input {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+
+.checkmark {
+    background-color: #242121;
+    border-radius: 50%;
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 25px;
+}
+
+.container:hover input ~ .checkmark {
+    background-color: #FF2047;
+}
+
+.container input:checked ~ .checkmark {
+    background-color: #FF2047;
+}
+
+.checkmark:after {
+    content: "";
+    display: none;
+    position: absolute;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    background: #F8F3E3;
+    border-radius: 50%;
+    height: 8px;
+    left: 9px;
+ 	top: 9px;
+	width: 8px;
+}
+
+.goBtn {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    border: 4px solid #FF2047;
+    color: #FF2047;
+    cursor: pointer;
+    font-family: 'Montserrat Bold';
+    font-size: 16px;
+    margin: 10px 50px 50px 710px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.goBtn:hover {
+    border: 4px solid #F8F3E3;
+    border-radius: 8px;
+    color: #F8F3E3;
+}
+
+.goBtn:focus {
+    outline: 0 !important;
+}
