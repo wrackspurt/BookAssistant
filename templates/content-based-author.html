@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="https://www.favicon.by/download.php?favicon=5e99d71abc09d.ico" type="image/x-icon">
+    <base target="_self">
+</head>
+<body>
+<header class="menu">
+    <a href="/" class="home">BOOK <span class="homeRed">ASSISTANT</span></a>
+    <ul class="menuList">
+        <li class="menuItem"><a href="#" class="menuLink">About</a></li>
+        <li class="menuItem"><a href="#" class="menuLink">Contact</a></li>
+    </ul>
+</header>
+<h1 align="center" class="pagesTitle">please, choose a book that you like to continue.</h1>
+<form method="post" action="/content_based">
+
+</form>
+<footer>
+    <div class="footerElements"></div>
+    <p class="bottomTitle">designed & developed by Elizaveta Kiseleva © 2020.
+        <a href="https://github.com/wrackspurt" target="_blank" class="footerLink">@wrackspurt</a></p>
+</footer>
+</body>
+</html>

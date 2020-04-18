@@ -19,8 +19,12 @@
 <h2 align="center">choose the type of recommendation and press the button to start :)</h2>
 <form method="post" action="/">
 <div class="chooseRecType">
-<label class="container">recommendation based on my favourite book
-<input type="radio" name="recType" value="content-based">
+<label class="container">recommendation based on my favourite book (by author)
+<input type="radio" name="recType" value="content-based-author" checked="checked">
+<span class="checkmark"></span>
+</label>
+<label class="container">recommendation based on my favourite book (by author and tag)
+<input type="radio" name="recType" value="content-based-author-tag">
 <span class="checkmark"></span>
 </label>
 <label class="container">recommendation based on my preferences
