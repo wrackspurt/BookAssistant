@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="https://www.favicon.by/download.php?favicon=5e99d71abc09d.ico" type="image/x-icon">
+    <base target="_self">
+</head>
+<body>
+{% block body %}
+<header class="menu">
+    <a href="/" class="home">BOOK <span class="homeRed">ASSISTANT</span></a>
+</header>
+<div class="pic">
+<a><img src="http://www.limpfish.com/notfound.gif" border="0" width=348 height=378></a>
+    </div>
+<footer>
+    <div class="footerElements"></div>
+    <p class="bottomTitle">designed & developed by Elizaveta Kiseleva © 2020.
+        <a href="https://github.com/wrackspurt" target="_blank" class="footerLink">@wrackspurt</a></p>
+</footer>
+{% endblock %}
+</body>
+</html>

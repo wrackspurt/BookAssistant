@@ -38,6 +38,15 @@ footer {
 .bottomTitle {
     font-size: 80%;
     margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.pic {
+    height: 40em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footerLink {
@@ -45,6 +54,8 @@ footer {
     float: right;
     margin-right: 10px;
     text-decoration: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .footerLink:hover {
@@ -63,7 +74,11 @@ footer {
     font-family: 'Reforma Grotesk Bold';
     font-size: 300%;
     color: #242121;
-    text-decoration: none;
+    text-decoration: none !important;
+}
+
+.home:hover {
+    color: #242121;
 }
 
 .homeRed {
@@ -92,6 +107,10 @@ footer {
     text-decoration: none;
     transition: color .25s ease-out;
     will-change: color;
+}
+
+.menuLink:hover {
+    color: #242121;
 }
 
 .menuLink::before,
@@ -211,4 +230,10 @@ footer {
 
 .goBtn:focus {
     outline: 0 !important;
+}
+
+.booksDropdown {
+    padding: 5rem;
+    margin-top: 5px;
+    font-family: 'Montserrat Bold';
 }

@@ -7,6 +7,11 @@ books, ratings, to_read, tags = get_data_from_csv()
 titles = get_titles(books)
 
 
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('404.html')
+
+
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
@@ -24,12 +29,12 @@ def home():
 
 @app.route('/content_based_author', methods=['GET', 'POST'])
 def get_content_based_author():
-    return render_template('content-based-author.html')
+    return render_template('content-based-author.html', bookList=titles)
 
 
 @app.route('/content_based_author_tag', methods=['GET', 'POST'])
 def get_content_based_author_tag():
-    return render_template('content-based-author-tag.html')
+    return render_template('content-based-author-tag.html', bookList=titles)
 
 
 @app.route('/collaborative_filtering', methods=['GET', 'POST'])

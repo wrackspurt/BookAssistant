@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Book Recommender System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="shortcut icon" href="https://www.favicon.by/download.php?favicon=5e99d71abc09d.ico" type="image/x-icon">
     <base target="_self">
@@ -15,9 +20,23 @@
         <li class="menuItem"><a href="#" class="menuLink">Contact</a></li>
     </ul>
 </header>
-<h1 align="center" class="pagesTitle">please, choose a book that you like to continue.</h1>
+<h1 align="center" class="pagesTitle">choose a book that you like to continue.</h1>
 <form method="post" action="/content_based">
-
+<div class="booksDropdown">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="form-group">
+						<select data-live-search="true" class="form-control selectpicker">
+                            <option selected disabled>please, enter a few letters...</option>
+                            {% for b in bookList %}
+							<option value="{{ b }}">{{ b }}</option>
+                            {% endfor %}
+						</select>
+					</div>
+                </div>
+			</div>
+		</div>
+<button type="submit" class="goBtn">let's go</button>
 </form>
 <footer>
     <div class="footerElements"></div>
