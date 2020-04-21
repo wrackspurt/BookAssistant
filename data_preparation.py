@@ -30,3 +30,13 @@ def get_collection(books, tags):
     books['collection'] = (pd.Series(books[['authors', 'tag_name']].fillna('').values.tolist()).str.join(' '))
 
     return books['collection']
+
+
+def get_popular(ds):
+    rated_books = ds.sort_values('ratings_count', ascending=False).head(20).set_index('title')
+    popular = []
+
+    for i in rated_books.index:
+        popular.append(i)
+
+    return popular

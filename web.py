@@ -1,6 +1,5 @@
-import pandas as pd
 from flask import Flask, render_template, redirect, url_for, request
-from data_preparation import get_data_from_csv, get_titles, get_indices, get_collection
+from data_preparation import get_data_from_csv, get_titles, get_indices, get_collection, get_popular
 from content_based import calculate_similarity, get_content_based_recommendation, prepare_recommendations
 
 app = Flask(__name__)
@@ -72,7 +71,8 @@ def get_collaborative_filtering():
 
 @app.route('/popular_books', methods=['GET', 'POST'])
 def get_popular_books():
-    return render_template('popular.html')
+    popular_books = get_popular(books)
+    return render_template('popular.html', popular_books=popular_books)
 
 
 if __name__ == '__main__':

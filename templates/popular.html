@@ -15,7 +15,12 @@
         <li class="menuItem"><a href="#" class="menuLink">Contact</a></li>
     </ul>
 </header>
-<h1 align="center" class="pagesTitle">here's the list of best-selling books for you.</h1>
+<h1 align="center" class="pagesTitle">here's the list of <span class="bookName">the most popular books</span> for you.</h1>
+{% for p in popular_books %}
+<div class="bookList">
+    <p class="bookListElem">{{ p }}</p>
+</div>
+{% endfor %}
 <footer>
     <div class="footerElements"></div>
     <p class="bottomTitle">designed & developed by Elizaveta Kiseleva © 2020.
