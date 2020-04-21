@@ -1,4 +1,3 @@
-import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
@@ -10,7 +9,7 @@ def calculate_similarity(data):
     return cos_sim
 
 
-def get_content_based_recommendation(titles, indices, similarities, title):
+def get_content_based_recommendation(similarities, titles, indices, title):
     idx = indices[title]
 
     sim = list(enumerate(similarities[idx]))

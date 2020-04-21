@@ -218,6 +218,7 @@ footer {
     left: 50%;
     transform: translate(-50%, 0);
     padding: 15px 32px;
+    margin-top: 20px;
     text-align: center;
     text-decoration: none;
 }
@@ -233,7 +234,33 @@ footer {
 }
 
 .booksDropdown {
-    padding: 5rem;
-    margin-top: 5px;
+    padding: 5rem 5rem 1rem 5rem;
     font-family: 'Montserrat Bold';
+}
+
+.resultsTitle {
+    color: #242121;
+    font-family: 'Reforma Grotesk Bold';
+    font-size: 250%;
+    margin-bottom: 30px;
+}
+
+.bookName {
+    color: #FF2047;
+}
+
+.bookListElem {
+    font-family: 'Montserrat Bold';
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 35%;
+    margin-right: 20%;
+}
+
+.bookError {
+    font-family: 'Montserrat Bold';
+    color: #FF2047;
+    margin-left: 38%;
+    margin-right: 30%;
+    margin-top: 0px;
 }

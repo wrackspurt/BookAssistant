@@ -20,24 +20,36 @@
         <li class="menuItem"><a href="#" class="menuLink">Contact</a></li>
     </ul>
 </header>
-<h1 align="center" class="pagesTitle">please, choose a book that you like to continue.</h1>
-<form method="post" action="/content_based">
+<h1 align="center" class="pagesTitle">choose a book that you like to continue.</h1>
+<form method="post" action="/content_based_author_tag">
 <div class="booksDropdown">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="form-group">
-						<select data-live-search="true" class="form-control selectpicker">
-                            <option selected disabled>please, enter a few letters...</option>
-                            {% for b in bookList %}
-							<option value="{{ b }}">{{ b }}</option>
-                            {% endfor %}
-						</select>
-					</div>
-                </div>
-			</div>
-		</div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <select data-live-search="true" name="bookChoice" class="form-control selectpicker">
+                    <option selected disabled>please, enter a few letters...</option>
+                    {% for b in bookList %}
+                    <option value="{{ b }}">{{ b }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+{% if book_error %}
+    <p class="bookError">{{ book_error }}</p>
+{% endif %}
 <button type="submit" class="goBtn">let's go</button>
 </form>
+{% if results %}
+<h2 align="center" class="resultsTitle">here is the list of recommendations based on the book:
+    <span class="bookName">{{ book }}</span></h2>
+{% for r in results %}
+<div class="bookList">
+    <p class="bookListElem">{{ r }}</p>
+</div>
+{% endfor %}
+{% endif %}
 <footer>
     <div class="footerElements"></div>
     <p class="bottomTitle">designed & developed by Elizaveta Kiseleva © 2020.
