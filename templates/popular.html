@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
      <meta charset="UTF-8">
-    <title>Book Recommender System</title>
+    <title>Recommendations - Book Recommender System</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="shortcut icon" href="https://www.favicon.by/download.php?favicon=5e99d71abc09d.ico" type="image/x-icon">
     <base target="_self">
@@ -11,14 +11,14 @@
 <header class="menu">
     <a href="/" class="home">BOOK <span class="homeRed">ASSISTANT</span></a>
     <ul class="menuList">
-        <li class="menuItem"><a href="#" class="menuLink">About</a></li>
-        <li class="menuItem"><a href="#" class="menuLink">Contact</a></li>
+        <li class="menuItem"><a href="/about" class="menuLink">About</a></li>
+        <li class="menuItem"><a href="/contact" class="menuLink">Contact</a></li>
     </ul>
 </header>
 <h1 align="center" class="pagesTitle">here's the list of <span class="bookName">the most popular books</span> for you.</h1>
 {% for p in popular_books %}
 <div class="bookList">
-    <p class="bookListElem">{{ p }}</p>
+    <p class="bookListElem"><a href="{{ popular_books[p] }}" target="_blank" class="bookListUrl">{{ p }}</a></p>
 </div>
 {% endfor %}
 <footer>

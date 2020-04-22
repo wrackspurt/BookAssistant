@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Book Recommender System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="https://www.favicon.by/download.php?favicon=5e99d71abc09d.ico" type="image/x-icon">
+    <base target="_self">
+</head>
+<body>
+<header class="menu">
+    <a href="/" class="home">BOOK <span class="homeRed">ASSISTANT</span></a>
+    <ul class="menuList">
+        <li class="menuItem"><a href="/about" class="menuLink">About</a></li>
+        <li class="menuItem"><a href="/contact" class="menuLink">Contact</a></li>
+    </ul>
+</header>
+<h1 align="center" class="contactTitle">about</h1>
+<h2 class="aboutTitle">Description</h2>
+<div class="aboutInfo">
+    <p>Hello! I'm a third year Business Informatics student of HSE University and this web application is a part of my course work.</p>
+    <p>As you've already noticed the goal of the application is providing book recommendations for the readers.</p>
+    <p>I'm using a hybrid recommender system which combines content based and collaborative filtering approaches to achieve the given aim.</p>
+    <p>There are 4 types of recommendations:
+    <ul>
+    <li>recommendation based on my favourite book (by author);</li>
+    <li>recommendation based on my favourite book (by author and tag);</li>
+    <li>recommendation based on my preferences;</li>
+    <li>the most popular books list.</li></ul></p>
+    <p>The first two of them are rested on content based approach (the first type uses the authors, the second one - the authors and the tags), the third one - on collaborative filtering and the last one doesn't use the recommender system at all (it's just an additional option).</p>
+</div>
+<h2 class="aboutTitle">Resources</h2>
+<div class="aboutInfo">
+<p>The <a href="https://www.kaggle.com/zygmunt/goodbooks-10k" target="_blank" class="aboutLink">dataset</a> contains 10000 books from <a href="https://www.goodreads.com/" target="_blank" class="aboutLink">Goodreads</a>.</p>
+<p>The repository of this project is <a href="https://github.com/wrackspurt/BookAssistant" target="_blank" class="aboutLink">here</a>.</p>
+</div>
+<footer>
+    <div class="footerElements"></div>
+    <p class="bottomTitle">designed & developed by Elizaveta Kiseleva © 2020.
+        <a href="https://github.com/wrackspurt" target="_blank" class="footerLink">@wrackspurt</a></p>
+</footer>
+</body>
+</html>

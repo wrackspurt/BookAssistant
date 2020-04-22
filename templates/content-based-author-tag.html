@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book Recommender System</title>
+    <title>Recommendations - Book Recommender System</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
@@ -16,8 +16,8 @@
 <header class="menu">
     <a href="/" class="home">BOOK <span class="homeRed">ASSISTANT</span></a>
     <ul class="menuList">
-        <li class="menuItem"><a href="#" class="menuLink">About</a></li>
-        <li class="menuItem"><a href="#" class="menuLink">Contact</a></li>
+        <li class="menuItem"><a href="/about" class="menuLink">About</a></li>
+        <li class="menuItem"><a href="/contact" class="menuLink">Contact</a></li>
     </ul>
 </header>
 <h1 align="center" class="pagesTitle">choose a book that you like to continue.</h1>
@@ -46,7 +46,7 @@
     <span class="bookName">{{ book }}</span></h2>
 {% for r in results %}
 <div class="bookList">
-    <p class="bookListElem">{{ r }}</p>
+    <p class="bookListElem"><a href="{{ results[r] }}" target="_blank" class="bookListUrl">{{ r }}</a></p>
 </div>
 {% endfor %}
 {% endif %}

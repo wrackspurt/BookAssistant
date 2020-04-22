@@ -22,7 +22,7 @@ h1 {
 h2 {
     color: #242121;
     font-family: 'Montserrat Bold';
-    margin: 50px auto auto;
+    margin: 100px auto auto;
 }
 
 footer {
@@ -40,6 +40,14 @@ footer {
     margin-left: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+.contactTitle {
+    font-size: 510%;
+}
+
+.contactEmail {
+    color: #FF2047;
 }
 
 .pic {
@@ -79,6 +87,15 @@ footer {
 
 .home:hover {
     color: #242121;
+}
+
+.bookListUrl {
+    color: #242121;
+    text-decoration: none !important;
+}
+
+.bookListUrl:hover {
+    color: #FF2047;
 }
 
 .homeRed {
@@ -263,4 +280,25 @@ footer {
     margin-left: 38%;
     margin-right: 30%;
     margin-top: 0px;
+}
+
+.aboutTitle {
+    color: #FF2047;
+    font-family: 'Montserrat Bold';
+    margin: 35px auto auto;
+}
+
+.aboutInfo {
+    font-family: 'Montserrat Bold';
+    color: #242121;
+    margin-bottom: 25px;
+}
+
+.aboutLink {
+    color: #FF2047;
+    text-decoration: none !important;
+}
+
+.aboutLink:hover {
+    color: #F8F3E3;
 }

@@ -32,6 +32,16 @@ def get_collection(books, tags):
     return books['collection']
 
 
+def get_books_url(books, book_id):
+    titles, urls = [i for i in books], ['https://www.goodreads.com/book/show/' + str(i) for i in book_id]
+    books_urls = {titles[i]: urls[i] for i in range(len(titles))}
+    return books_urls
+
+
+def get_results_with_url(books_urls, recommendations):
+    return {k: books_urls[k] for k in books_urls if k in recommendations}
+
+
 def get_popular(ds):
     rated_books = ds.sort_values('ratings_count', ascending=False).head(20).set_index('title')
     popular = []
