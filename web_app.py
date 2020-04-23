@@ -50,22 +50,22 @@ def post_author_results():
         return render_template('content-based-author.html', results=results, bookList=titles, book=book)
 
 
-@app.route('/content_based_author_tag')
+@app.route('/content_based_tag')
 def get_content_based_author_tag():
-    return render_template('content-based-author-tag.html', bookList=titles)
+    return render_template('content-based-tag.html', bookList=titles)
 
 
-@app.route('/content_based_author_tag', methods=['POST'])
+@app.route('/content_based_tag', methods=['POST'])
 def post_author_tag_results():
     book = request.form.get('bookChoice')
     if book not in titles:
         book_error = 'please, choose a book to get recommendations'
-        return render_template('content-based-author-tag.html', book_error=book_error, bookList=titles)
+        return render_template('content-based-tag.html', book_error=book_error, bookList=titles)
     else:
         results = get_results_with_url(books_url, prepare_recommendations(
-            get_content_based_recommendation(calculate_similarity(collection),
+            get_content_based_recommendation(calculate_similarity(collection.head(10000)),
                                              books['title'], indices, book), book))
-        return render_template('content-based-author-tag.html', results=results, bookList=titles, book=book)
+        return render_template('content-based-tag.html', results=results, bookList=titles, book=book)
 
 
 @app.route('/collaborative_filtering', methods=['GET', 'POST'])

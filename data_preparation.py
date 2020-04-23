@@ -24,12 +24,7 @@ def get_indices(ds, col):
 
 def get_collection(books, tags):
     books_with_tags = pd.merge(books, tags, left_on='book_id', right_on='goodreads_book_id', how='inner')
-    grouped_ds = books_with_tags.groupby('book_id')['tag_name'].apply(' '.join).reset_index()
-
-    books = pd.merge(books, grouped_ds, left_on='book_id', right_on='book_id', how='inner')
-    books['collection'] = (pd.Series(books[['authors', 'tag_name']].fillna('').values.tolist()).str.join(' '))
-
-    return books['collection']
+    return books_with_tags['tag_name']
 
 
 def get_books_url(books, book_id):
