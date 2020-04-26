@@ -5,11 +5,11 @@ from content_based import calculate_similarity, get_content_based_recommendation
 
 app = Flask(__name__)
 
-books, ratings, to_read, tags = get_data_from_csv()
-titles = get_titles(books)
-indices = get_indices(books, 'title')
-collection = get_collection(books, tags)
-books_url = get_books_url(books['title'], books['book_id'])
+BOOKS, RATINGS, TO_READ, TAGS = get_data_from_csv()
+TITLES = get_titles(BOOKS)
+INDICES = get_indices(BOOKS, 'title')
+COLLECTION = get_collection(BOOKS, TAGS)
+BOOKS_URL = get_books_url(BOOKS['title'], BOOKS['book_id'])
 
 
 @app.errorhandler(404)
@@ -34,38 +34,38 @@ def home():
 
 @app.route('/content_based_author')
 def get_content_based_author():
-    return render_template('content-based-author.html', bookList=titles)
+    return render_template('content-based-author.html', bookList=TITLES)
 
 
 @app.route('/content_based_author', methods=['POST'])
 def post_author_results():
     book = request.form.get('bookChoice')
-    if book not in titles:
+    if book not in TITLES:
         book_error = 'please, choose a book to get recommendations'
-        return render_template('content-based-author.html', book_error=book_error, bookList=titles)
+        return render_template('content-based-author.html', book_error=book_error, bookList=TITLES)
     else:
-        results = get_results_with_url(books_url, prepare_recommendations(
-            get_content_based_recommendation(calculate_similarity(books['authors']),
-                                             books['title'], indices, book), book))
-        return render_template('content-based-author.html', results=results, bookList=titles, book=book)
+        results = get_results_with_url(BOOKS_URL, prepare_recommendations(
+            get_content_based_recommendation(calculate_similarity(BOOKS['authors']),
+                                             BOOKS['title'], INDICES, book), book))
+        return render_template('content-based-author.html', results=results, bookList=TITLES, book=book)
 
 
 @app.route('/content_based_tag')
 def get_content_based_author_tag():
-    return render_template('content-based-tag.html', bookList=titles)
+    return render_template('content-based-tag.html', bookList=TITLES)
 
 
 @app.route('/content_based_tag', methods=['POST'])
 def post_author_tag_results():
     book = request.form.get('bookChoice')
-    if book not in titles:
+    if book not in TITLES:
         book_error = 'please, choose a book to get recommendations'
-        return render_template('content-based-tag.html', book_error=book_error, bookList=titles)
+        return render_template('content-based-tag.html', book_error=book_error, bookList=TITLES)
     else:
-        results = get_results_with_url(books_url, prepare_recommendations(
-            get_content_based_recommendation(calculate_similarity(collection.head(10000)),
-                                             books['title'], indices, book), book))
-        return render_template('content-based-tag.html', results=results, bookList=titles, book=book)
+        results = get_results_with_url(BOOKS_URL, prepare_recommendations(
+            get_content_based_recommendation(calculate_similarity(COLLECTION.head(10000)),
+                                             BOOKS['title'], INDICES, book), book))
+        return render_template('content-based-tag.html', results=results, bookList=TITLES, book=book)
 
 
 @app.route('/collaborative_filtering', methods=['GET', 'POST'])
@@ -75,7 +75,7 @@ def get_collaborative_filtering():
 
 @app.route('/popular_books', methods=['GET', 'POST'])
 def get_popular_books():
-    popular_books = get_results_with_url(books_url, get_popular(books))
+    popular_books = get_results_with_url(BOOKS_URL, get_popular(BOOKS))
     return render_template('popular.html', popular_books=popular_books)
 
 

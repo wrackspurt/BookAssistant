@@ -1,5 +1,5 @@
 body {
-    background-color: #F8C25C;
+    background-color: #F8F3E3;
 }
 
 @font-face {
@@ -58,7 +58,7 @@ footer {
 }
 
 .footerLink {
-    color: #FF2047;
+    color: #F8C25C;
     float: right;
     margin-right: 10px;
     text-decoration: none;
@@ -67,7 +67,7 @@ footer {
 }
 
 .footerLink:hover {
-    color: #F8F3E3;
+    color: #FF2047;
 }
 
 .pagesTitle {
@@ -196,7 +196,7 @@ footer {
 }
 
 .container:hover input ~ .checkmark {
-    background-color: #FF2047;
+    background-color: #F8C25C;
 }
 
 .container input:checked ~ .checkmark {
@@ -241,9 +241,9 @@ footer {
 }
 
 .goBtn:hover {
-    border: 4px solid #F8F3E3;
+    border: 4px solid #F8C25C;
     border-radius: 8px;
-    color: #F8F3E3;
+    color: #F8C25C;
 }
 
 .goBtn:focus {
@@ -300,5 +300,5 @@ footer {
 }
 
 .aboutLink:hover {
-    color: #F8F3E3;
+    color: #F8C25C;
 }
