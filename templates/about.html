@@ -18,17 +18,24 @@
 <h1 align="center" class="contactTitle">about</h1>
 <h2 class="aboutTitle">Description</h2>
 <div class="aboutInfo">
-    <p>Hello! I'm a third year Business Informatics student of HSE University and this web application is a part of my course work.</p>
-    <p>As you've already noticed the goal of the application is providing book recommendations for the readers.</p>
-    <p>I'm using a hybrid recommender system which combines content based and collaborative filtering approaches to achieve the given aim.</p>
-    <p>There are 4 types of recommendations:
-    <ul>
-    <li>recommendation based on my favourite book (by author);</li>
-    <li>recommendation based on my favourite book (by tag);</li>
-    <li>recommendation based on my preferences;</li>
-    <li>the most popular books list.</li></ul></p>
-    <p>The first two of them are rested on content based approach (the first type uses the authors, the second one - the tags), the third one - on collaborative filtering and the last one doesn't use the recommender system at all (it's just an additional option).</p>
-</div>
+    <p><span class="aboutRed">BookAssistant</span> is a web application providing book recommendations. It uses a hybrid
+        recommender system which combines content based and collaborative filtering approaches to achieve the given aim.
+    </p></div>
+<h2 class="aboutTitle">A short guide to using BookAssistant</h2>
+<div class="aboutInfo">
+    <p>Section <span class="aboutYellow">"recommendation based on my preferences"</span> requires your Goodreads ID to
+        provide recommendations (based on collaborative filtering approach). <span class="aboutRed">Don't worry, if you
+            don't have a Goodreads account</span>: just leave a blank line and enter the button to continue.
+        <span class="aboutRed">If you have Goodreads account but BookAssistant doesn't recognize your ID</span>,
+        it means that your ID is not in the dataset or there's not enough information about you to create recommendations,
+        but you still can get recommendations based on another approach. You'll have to choose what kind of
+        recommendation (rested on content based approach) you'd like to get: if you what to read some books of  a
+        specific author, choose <span class="aboutYellow">"recommendation based on my favourite book
+            (by author)"</span>; if you just want to read books on a certain themes, choose <span class="aboutYellow">
+            "recommendation based on my favourite book (by tag)"</span>. After that you'll just have to enter the title
+        of you favourite book and revel in your recommendations :)</p>
+    <p>If you want to read some well-known books, visit <span class="aboutYellow">"the most popular books list" section.
+    </span></p></div>
 <h2 class="aboutTitle">Resources</h2>
 <div class="aboutInfo">
 <p>The <a href="https://www.kaggle.com/zygmunt/goodbooks-10k" target="_blank" class="aboutLink">dataset</a> contains 10000 books from <a href="https://www.goodreads.com/" target="_blank" class="aboutLink">Goodreads</a>.</p>

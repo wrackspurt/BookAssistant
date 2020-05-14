@@ -15,7 +15,23 @@
         <li class="menuItem"><a href="/contact" class="menuLink">Contact</a></li>
     </ul>
 </header>
-<h1 align="center" class="pagesTitle">please, rate the books that are presented here to continue.</h1>
+<h1 align="center" class="pagesTitle">enter your <span class="h1Red">Goodreads id</span> to continue.</h1>
+<h2 align="center" class="subTitle">need help? check <a href="/about" class="subTitleLink">about</a></h2>
+<form method="post" action="/collaborative_filtering">
+<div class="chooseId">
+    <input type="text" name="idChoice" placeholder="for example, 588" size="45" class="collabInput">
+</div>
+<h2 align="center" class="subTitle">it'll take some time to generate recommendations.</h2>
+<button type="submit" class="goBtn">let's go</button>
+</form>
+{% if results %}
+<h2 align="center" class="resultsTitle">here is the list of recommendations for you:</h2>
+{% for r in results %}
+<div class="bookList">
+    <p class="bookListElem"><a href="{{ results[r] }}" target="_blank" class="bookListUrl">{{ r }}</a></p>
+</div>
+{% endfor %}
+{% endif %}
 <footer>
     <div class="footerElements"></div>
     <p class="bottomTitle">designed & developed by Elizaveta Kiseleva © 2020.

@@ -18,6 +18,14 @@ def get_titles(books):
     return titles
 
 
+def get_ids(ratings):
+    id_ds = ratings['user_id'].unique()
+    ids = []
+    for i in id_ds:
+        ids.append(str(i))
+    return ids
+
+
 def get_indices(ds, col):
     return pd.Series(ds.index, index=ds[col])
 
@@ -45,3 +53,8 @@ def get_popular(ds):
         popular.append(i)
 
     return popular
+
+
+def get_ratings_with_titles(ratings, books):
+    result = ratings.merge(books[['book_id', 'title']], on='book_id', how='left')
+    return result

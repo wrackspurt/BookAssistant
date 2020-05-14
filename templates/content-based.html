@@ -15,20 +15,20 @@
         <li class="menuItem"><a href="/contact" class="menuLink">Contact</a></li>
     </ul>
 </header>
-<h1 align="center">your personal adviser in the world of <span class="book">books</span>.</h1>
-<h2 align="center">looking for new books to read? so, choose the section and press the button to start :)</h2>
-<form method="post" action="/">
-    <div class="chooseRecType">
-        <label class="container">recommendation based on my preferences
-            <input type="radio" name="recType" value="collaborative-filtering" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">the most popular books list
-            <input type="radio" name="recType" value="popular">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <button type="submit" class="goBtn">let's go</button>
+<h1 align="center" class="cbTitle">sorry, your id doesn't exist :(<br>by the way, you still can get recommendations!</h1>
+<h2 align="center"> choose the type of recommendation and press the button to start :)</h2>
+<form method="post" action="/content_based/">
+<div class="chooseRecType">
+<label class="container">recommendation based on my favourite book (by author)
+<input type="radio" name="recType" value="content-based-author" checked="checked">
+<span class="checkmark"></span>
+</label>
+<label class="container">recommendation based on my favourite book (by tag)
+<input type="radio" name="recType" value="content-based-author-tag">
+<span class="checkmark"></span>
+</label>
+</div>
+<button type="submit" class="goBtn">let's go</button>
 </form>
 <footer>
     <div class="footerElements"></div>
@@ -36,3 +36,4 @@
         <a href="https://github.com/wrackspurt" target="_blank" class="footerLink">@wrackspurt</a></p>
 </footer>
 </body>
+</html>
