@@ -1,9 +1,8 @@
 from flask import Flask, render_template, redirect, url_for, request
 from data_preparation import get_data_from_csv, get_titles, get_indices, get_collection, get_popular, get_books_url, \
-    get_results_with_url, get_ids, get_ratings_with_titles
+    get_results_with_url, get_ids, get_ratings_with_titles, get_books_tuples, get_ratings_tuples, get_books_ids
 from content_based import calculate_similarity, get_content_based_recommendation, prepare_recommendations
-from collaborative_filtering import preparing_data, training, preparing_pred_ds, \
-    get_collaborative_filtering_recs, prepare_recs
+from collaborative_filtering import get_predictions
 
 app = Flask(__name__)
 
@@ -14,6 +13,9 @@ INDICES = get_indices(BOOKS, 'title')
 COLLECTION = get_collection(BOOKS, TAGS)
 BOOKS_URL = get_books_url(BOOKS['title'], BOOKS['book_id'])
 RATINGS_TITLES = get_ratings_with_titles(RATINGS, BOOKS)
+BOOKS_TUPLES = get_books_tuples(BOOKS)
+RATINGS_TUPLES = get_ratings_tuples(RATINGS)
+BIDS = get_books_ids(BOOKS)
 
 
 @app.errorhandler(404)
@@ -56,9 +58,7 @@ def get_collaborative_filtering():
 def post_collaborative_filtering():
     chosen_id = request.form.get('idChoice')
     if chosen_id in IDS:
-        results = get_results_with_url(BOOKS_URL,
-                    prepare_recs(get_collaborative_filtering_recs(preparing_pred_ds(training(preparing_data(RATINGS))),
-                                                                  RATINGS_TITLES, int(chosen_id))))
+        results = get_results_with_url(BOOKS_URL, get_predictions(int(chosen_id), RATINGS_TUPLES, BOOKS_TUPLES, BIDS))
         if len(results) == 0:
             return redirect(url_for('content_based'))
         else:

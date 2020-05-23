@@ -58,3 +58,22 @@ def get_popular(ds):
 def get_ratings_with_titles(ratings, books):
     result = ratings.merge(books[['book_id', 'title']], on='book_id', how='left')
     return result
+
+
+def get_books_tuples(books):
+    subset = books[['book_id', 'title']]
+    result = [tuple(i) for i in subset.to_numpy()]
+    return result
+
+
+def get_ratings_tuples(ratings):
+    subset = ratings[['book_id', 'user_id', 'rating']]
+    tuples = [tuple(i) for i in subset.to_numpy()]
+    return tuples
+
+
+def get_books_ids(books):
+    result = []
+    for b in books['book_id']:
+        result.append(b)
+    return result
