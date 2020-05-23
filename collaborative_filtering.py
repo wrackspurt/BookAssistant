@@ -1,9 +1,4 @@
-import pandas as pd
-import numpy as np
-
-from surprise import Dataset, Reader
 from surprise import dump
-from surprise import SVD
 
 
 def load_model():
